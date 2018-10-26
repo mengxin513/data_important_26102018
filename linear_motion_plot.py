@@ -12,12 +12,12 @@ if __name__ == "__main__":
 
         #Load the data from the HDF5 file
         df = h5py.File("linear_motion.hdf5", mode = "r")
-        for group in df.values():
-            dataset = df.values()[-1]
-            N_points = len(dataset) - 2
+        for i in range(len(df)):
+            group = df["stepwise_motion%03d" % i]
+            N_points = len(group) - 2
             data = np.zeros([2000 * N_points, 3])
             for i in range(N_points):
-                dset1 = dataset["sequence_%05d" % i]
+                dset1 = group["sequence_%05d" % i]
                 dset2 = dset1["camera_motion"]
                 for j in range(2000):
                     data[2000 * i + j, :] = dset2[j, :]
