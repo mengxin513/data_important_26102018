@@ -24,16 +24,16 @@ if __name__ == "__main__":
 
             matplotlib.rcParams.update({'font.size': 12})
 
-            microns_per_pixel = 2.16
+            microns_per_pixel = 1.72
 
             t = data[:, 0]
             cam_x = data[:, 1] * microns_per_pixel
             cam_x -= np.mean(cam_x)
             cam_y = data[:, 2] * microns_per_pixel
             cam_y -= np.mean(cam_y)
-            stage_x = data[:, 3] * 0.012
+            stage_x = data[:, 3] * 0.0095
             stage_x -= np.mean(stage_x)
-            stage_y = data[:, 5] * 0.0088
+            stage_y = data[:, 5] * 0.0070
             stage_y -= np.mean(stage_y)
 
             fig, ax = plt.subplots(1, 1)

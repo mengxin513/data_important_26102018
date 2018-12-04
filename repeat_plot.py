@@ -9,7 +9,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 if __name__ == "__main__":
     print ("Loading data...")
 
-    microns_per_pixel = 2.16
+    microns_per_pixel = 1.72
     df = h5py.File("repeat.hdf5", mode = "r")
     group = df.values()[-1]
     n = len(group)
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
     fig2, ax2 = plt.subplots(1, 1)
 
-    ax2.semilogx(dist[:] * 0.01, mean_error[:] * microns_per_pixel, "r-")
+    ax2.semilogx(dist[:] * 0.00825, mean_error[:] * microns_per_pixel, "r-")
 
     ax2.set_xlabel('Move Distance [$\mathrm{\mu m}$]')
     ax2.set_ylabel('Error [$\mathrm{\mu m}$]')

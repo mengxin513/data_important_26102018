@@ -1,0 +1,6 @@
+Assuming the smallest element is number 6 from group 5.
+That means one pixel is 1719.29032786 +/- 0.933248478259 nm.
+The field of view is [1100.34580983  825.25935737] um.
+
+pixel_nm: 1719.29032786
+pixel_nm_se: 0.933248478259
